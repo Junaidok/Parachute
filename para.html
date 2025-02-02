@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RTB Auto Ads</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(135deg, #141e30, #243b55);
+            color: #fff;
+        }
+        .container {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 20px;
+            text-align: center;
+            width: 90%;
+            max-width: 400px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+        h1 {
+            font-size: 1.8rem;
+            color: #ffc107;
+            margin-bottom: 10px;
+        }
+        .buttons {
+            margin-top: 15px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        button {
+            padding: 12px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: #fff;
+            background-color: #007bff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+        button:hover {
+            background-color: #0056b3;
+            transform: scale(1.05);
+        }
+        button:active {
+            transform: scale(1);
+        }
+        .auto-ads {
+            background-color: #28a745;
+        }
+        .auto-ads:hover {
+            background-color: #1e7b34;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>RTB Auto Ads</h1>
+        <div class="buttons">
+            <button onclick="openRTB()">Show Ad</button>
+            <button class="auto-ads" onclick="autoShowAds()">Auto Show Ads (1s)</button>
+        </div>
+    </div>
+
+    <script>
+        const rtbLink = "http://offers.propellerads.com/api/v1/ads_open_rtb/8884293/?auth=c043fc962ee0dfaf0e99ab335249b81cfbd53afb";
+
+        function openRTB() {
+            window.open(rtbLink, "_blank");
+        }
+
+        function autoShowAds() {
+            setInterval(() => {
+                openRTB();
+            }, 1000); // প্রতি 1 সেকেন্ড পরপর Ad ওপেন হবে
+        }
+    </script>
+</body>
+</html>
